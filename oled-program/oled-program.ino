@@ -2,7 +2,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
  
-Adafruit_SSD1306 display(128, 32);
+Adafruit_SSD1306 display(128, 64);
 
 int BAUD_RATE = 9600;
  
@@ -37,7 +37,7 @@ void loop() {
   display.println("Last:");
   display.println("> 0x65");
   display.display();
-  delay(50);
+  delay(200);
   display.clearDisplay();
 
   display.setCursor(0, 0);
@@ -49,7 +49,7 @@ void loop() {
   display.println("Last:");
   display.println("> 0x65");
   display.display();
-  delay(50);
+  delay(200);
   display.clearDisplay();
 
   display.setCursor(0, 0);
@@ -61,7 +61,7 @@ void loop() {
   display.println("Last:");
   display.println("> 0x65");
   display.display();
-  delay(50);
+  delay(200);
   display.clearDisplay();
 
   display.setCursor(0, 0);
@@ -73,6 +73,6 @@ void loop() {
   display.println("Last:");
   display.println("> 0x65");
   display.display();
-  delay(50);
+  delay(200);
   display.clearDisplay();
 }

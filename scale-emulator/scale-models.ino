@@ -24,8 +24,8 @@ String SCALE_MODEL_CONFIANTEC_OLD (int value) {
 }
 
 String SCALE_MODEL_JUNDIAI_T21 (int value) {
-  String returnable = padLeft(value, 7, " ");
-  return "ST,GS,+" + returnable + "Kg\r\n";
+  String returnable = padLeft(value, 7, "0");
+  return "ST,GS,+" + returnable + "kg\r\n";
 }
 
 String SCALE_MODEL_JUNDIAI_EPM (int value) {
