@@ -43,7 +43,7 @@ int WEIGHT_MIN = 0;
 
 int WEIGHT_MAX = 12000;
 
-SCALE_MODEL CURRENT_SCALE = JUNDIAI_T21;
+SCALE_MODEL CURRENT_SCALE = CONFIANTEC;
 
 bool UPWARDS = true;
 
@@ -129,6 +129,7 @@ void printValue() {
       break;
   }
 
+  SOFT_SERIAL.println(weightToDisplay);
   Serial.print(weightToDisplay);
 }
 
