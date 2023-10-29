@@ -1,6 +1,7 @@
 #include <SoftwareSerial.h>
 
 enum SCALE_MODEL {
+  TOLEDO_P03,
   CONFIANTEC,
   CONFIANTEC_OLD,
   GENOVA,
@@ -11,6 +12,7 @@ enum SCALE_MODEL {
 };
 
 const char* SCALE_NAME[] = {
+  "TOLEDO (P03)",
   "CONFIANTEC",
   "CONFIANTEC OLD",
   "GENOVA",
@@ -37,23 +39,25 @@ int CURRENT_BAUD = 6;
 
 float CURRENT_WEIGHT = 0;
 
-int STEP_WEIGHT = 100;
+int STEP_WEIGHT = 10;
 
 int WEIGHT_MIN = 0;
 
 int WEIGHT_MAX = 12000;
 
-SCALE_MODEL CURRENT_SCALE = CONFIANTEC;
+SCALE_MODEL CURRENT_SCALE = TOLEDO_P03;
 
 bool UPWARDS = true;
 
 void setup() {
   bootstrap();
-  delay(2000);
+
+  delay(300);
 }
 
 void loop() {
   printValue();
+
   delay(300);
 }
 
@@ -67,7 +71,7 @@ void bootstrap() {
   Serial.flush();
   SOFT_SERIAL.flush();
 
-  delay(100);
+  delay(300);
 
   Serial.println("CATU | Scale Emulator for Arduino | v0.0.1");
   Serial.println("Written by Fabio Y. Goto");
@@ -106,6 +110,9 @@ void printValue() {
   String weightToDisplay = "";
 
   switch (CURRENT_SCALE) {
+    case TOLEDO_P03:
+      weightToDisplay = SCALE_MODEL_TOLEDO_P03(CURRENT_WEIGHT);
+      break;
     case CONFIANTEC:
       weightToDisplay = SCALE_MODEL_CONFIANTEC(CURRENT_WEIGHT);
       break;
@@ -130,7 +137,7 @@ void printValue() {
   }
 
   SOFT_SERIAL.println(weightToDisplay);
-  Serial.print(weightToDisplay);
+  Serial.println(weightToDisplay);
 }
 
 int clamp(int value) {

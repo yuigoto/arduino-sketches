@@ -1,3 +1,5 @@
+String CHAR_TOLEDO_STX = "";
+
 String padLeft(int value, unsigned size, String character) {
   String padded = (String) value;
 
@@ -11,6 +13,11 @@ String padLeft(int value, unsigned size, String character) {
 String SCALE_MODEL_DEFAULT (int value) {
   String returnable = padLeft(value, 10, "0");
   return returnable + "kg\r\n";
+}
+
+String SCALE_MODEL_TOLEDO_P03 (int value) {
+  String returnable = CHAR_TOLEDO_STX + ")p`" + padLeft(value, 6, "0") + padLeft(0, 6, "0");
+  return returnable;
 }
 
 String SCALE_MODEL_CONFIANTEC (int value) {
