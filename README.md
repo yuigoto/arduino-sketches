@@ -14,6 +14,8 @@ See `AUTHORS.md` for more information.
 
 This project is licensed under the `MIT License`. See `LICENSE.md` for more details on the subjects of the license.
 
+- [ ] Hola!
+
 ----------------------------------------------------------------------
 
 _©2020 Fabio Y. Goto_
