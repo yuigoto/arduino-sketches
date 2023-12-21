@@ -45,6 +45,11 @@ String SCALE_MODEL_JUNDIAI_SP6000 (int value) {
   return "    " + returnable + "991" + returnable + "0000000" + "XX\r\n";
 }
 
+String SCALE_MODEL_GENOVA (int value) {
+  String returnable = padLeft(value, 6, " ");
+  return "PB:" + returnable + ".0kg PL:" + returnable + ".0kg T:" + returnable + ".0kg\r\n";
+}
+
 String SCALE_MODEL_JUNDIAI_TCA (int value) {
   String returnable = padLeft(value, 7, " ");
   return "PB:" + returnable + "kg PL:" + returnable + "kg T:" + returnable + "kg\r\n";

@@ -131,6 +131,9 @@ void printValue() {
     case JUNDIAI_TCA:
       weightToDisplay = SCALE_MODEL_JUNDIAI_TCA(CURRENT_WEIGHT);
       break;
+    case GENOVA:
+      weightToDisplay = SCALE_MODEL_GENOVA(CURRENT_WEIGHT);
+      break;
     default:
       weightToDisplay = SCALE_MODEL_DEFAULT(CURRENT_WEIGHT);
       break;
